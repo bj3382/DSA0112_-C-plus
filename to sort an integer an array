@@ -1,0 +1,28 @@
+#include <iostream>
+#include <algorithm>
+
+class Sort {
+public:
+    void sort(int arr[], int n) {
+        std::sort(arr, arr + n);
+    }
+
+    void sort(double arr[], int n) {
+        std::sort(arr, arr + n);
+    }
+};
+
+int main() {
+    Sort obj;
+    int intArr[] = {3, 1, 2};
+    double doubleArr[] = {2.2, 3.3, 1.1};
+
+    obj.sort(intArr, 3);
+    obj.sort(doubleArr, 3);
+
+    std::cout << "Sorted int array: ";
+    for (int x : intArr) std::cout << x << " ";
+    std::cout << "\nSorted double array: ";
+    for (double x : doubleArr) std::cout << x << " ";
+    return 0;
+}
