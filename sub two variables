@@ -1,0 +1,23 @@
+#include <iostream>
+
+class Subtract {
+private:
+    int value;
+
+public:
+    Subtract(int v) : value(v) {}
+
+    // Overload - operator
+    Subtract operator-(const Subtract& other) {
+        return Subtract(value - other.value);
+    }
+
+    int getValue() const { return value; }
+};
+
+int main() {
+    Subtract obj1(10), obj2(3);
+    Subtract result = obj1 - obj2;
+    std::cout << "Result of subtraction: " << result.getValue() << std::endl;
+    return 0;
+}
