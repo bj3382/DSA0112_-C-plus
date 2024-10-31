@@ -1,0 +1,21 @@
+#include <iostream>
+
+class Display {
+private:
+    int value;
+
+public:
+    Display(int v) : value(v) {}
+
+    // Overload << operator
+    friend std::ostream& operator<<(std::ostream& os, const Display& obj) {
+        os << "Value: " << obj.value;
+        return os;
+    }
+};
+
+int main() {
+    Display obj(10);
+    std::cout << obj << std::endl;
+    return 0;
+}
