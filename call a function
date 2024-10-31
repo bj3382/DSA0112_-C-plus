@@ -1,0 +1,14 @@
+#include <iostream>
+
+class Functor {
+public:
+    void operator()(int x) {
+        std::cout << "Function called with value: " << x << std::endl;
+    }
+};
+
+int main() {
+    Functor func;
+    func(5); // Using () operator as a function call
+    return 0;
+}
