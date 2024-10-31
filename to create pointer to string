@@ -1,0 +1,11 @@
+#include <iostream>
+#include <string>
+
+int main() {
+    std::string str = "Hello, World!";  // Declare a string variable
+    std::string* ptr = &str;             // Create a pointer to the string variable
+
+    // Display the value using the pointer
+    std::cout << "Value of string: " << *ptr << std::endl;
+    return 0;
+}
