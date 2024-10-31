@@ -1,0 +1,29 @@
+#include <iostream>
+
+void printHollowSquare(int size) {
+    for (int i = 0; i < size; i++) {
+        for (int j = 0; j < size; j++) {
+            // Print '*' for the borders
+            if (i == 0 || i == size - 1 || j == 0 || j == size - 1) {
+                std::cout << "*";
+            } else {
+                std::cout << " ";
+            }
+        }
+        std::cout << std::endl;
+    }
+}
+
+int main() {
+    int size;
+    std::cout << "Enter the size of the square: ";
+    std::cin >> size;
+
+    if (size < 2) {
+        std::cout << "Size should be at least 2." << std::endl;
+    } else {
+        printHollowSquare(size);
+    }
+
+    return 0;
+}
