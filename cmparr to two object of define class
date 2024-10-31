@@ -1,0 +1,24 @@
+#include <iostream>
+
+class Compare {
+private:
+    int value;
+
+public:
+    Compare(int v) : value(v) {}
+
+    // Overload == operator
+    bool operator==(const Compare& other) const {
+        return value == other.value;
+    }
+};
+
+int main() {
+    Compare obj1(5), obj2(5);
+    if (obj1 == obj2) {
+        std::cout << "Objects are equal" << std::endl;
+    } else {
+        std::cout << "Objects are not equal" << std::endl;
+    }
+    return 0;
+}
