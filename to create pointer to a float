@@ -1,0 +1,10 @@
+#include <iostream>
+
+int main() {
+    float num = 5.5f;          // Declare a float variable
+    float* ptr = &num;         // Create a pointer to the float variable
+
+    // Display the value using the pointer
+    std::cout << "Value of float: " << *ptr << std::endl;
+    return 0;
+}
