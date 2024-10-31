@@ -1,0 +1,24 @@
+#include <iostream>
+
+class Increment {
+private:
+    int value;
+
+public:
+    Increment(int v) : value(v) {}
+
+    // Overload prefix ++
+    Increment& operator++() {
+        ++value;
+        return *this;
+    }
+
+    int getValue() const { return value; }
+};
+
+int main() {
+    Increment obj(5);
+    ++obj;
+    std::cout << "Value after increment: " << obj.getValue() << std::endl;
+    return 0;
+}
