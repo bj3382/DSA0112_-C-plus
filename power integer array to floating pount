@@ -1,0 +1,20 @@
+#include <iostream>
+#include <cmath>
+
+class Power {
+public:
+    int power(int base, int exp) {
+        return std::pow(base, exp);
+    }
+
+    double power(double base, double exp) {
+        return std::pow(base, exp);
+    }
+};
+
+int main() {
+    Power obj;
+    std::cout << "2^3 = " << obj.power(2, 3) << std::endl;
+    std::cout << "2.5^3.5 = " << obj.power(2.5, 3.5) << std::endl;
+    return 0;
+}
