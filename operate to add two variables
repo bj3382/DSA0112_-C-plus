@@ -1,0 +1,23 @@
+#include <iostream>
+
+class Add {
+private:
+    int value;
+
+public:
+    Add(int v) : value(v) {}
+
+    // Overload + operator
+    Add operator+(const Add& other) {
+        return Add(value + other.value);
+    }
+
+    int getValue() const { return value; }
+};
+
+int main() {
+    Add obj1(5), obj2(10);
+    Add result = obj1 + obj2;
+    std::cout << "Result of addition: " << result.getValue() << std::endl;
+    return 0;
+}
