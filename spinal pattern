@@ -1,0 +1,28 @@
+#include <iostream>
+#include <iomanip>
+
+void printSpinalPattern(int rows) {
+    int num = 1;
+    for (int i = 1; i <= rows; i++) {
+        // Print spaces for zigzag alignment
+        for (int j = 0; j < rows - i; j++) {
+            std::cout << "  ";
+        }
+        
+        // Print numbers in a "spine-like" pattern
+        for (int j = 1; j <= 2 * i - 1; j++) {
+            std::cout << num++ << " ";
+        }
+        std::cout << std::endl;
+    }
+}
+
+int main() {
+    int rows;
+    std::cout << "Enter the number of rows for the spinal pattern: ";
+    std::cin >> rows;
+
+    printSpinalPattern(rows);
+
+    return 0;
+}
