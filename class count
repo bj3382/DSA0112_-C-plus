@@ -1,0 +1,47 @@
+#include <iostream>
+
+class Counter {
+private:
+    static int count; // Static variable to keep track of the count
+
+public:
+    // Constructor increments the counter when a new instance is created
+    Counter() {
+        count++;
+    }
+
+    // Destructor decrements the counter when an instance is destroyed
+    ~Counter() {
+        count--;
+    }
+
+    // Static method to get the current count
+    static int getCount() {
+        return count;
+    }
+};
+
+// Initialize the static variable
+int Counter::count = 0;
+
+int main() {
+    // No objects created yet
+    std::cout << "Initial count: " << Counter::getCount() << std::endl;
+
+    // Creating objects
+    Counter obj1;
+    std::cout << "Count after creating obj1: " << Counter::getCount() << std::endl;
+
+    Counter obj2;
+    std::cout << "Count after creating obj2: " << Counter::getCount() << std::endl;
+
+    {
+        Counter obj3;
+        std::cout << "Count after creating obj3: " << Counter::getCount() << std::endl;
+    } // obj3 goes out of scope here
+
+    // obj3 is destroyed, count decreases
+    std::cout << "Count after obj3 is destroyed: " << Counter::getCount() << std::endl;
+
+    return 0;
+}
