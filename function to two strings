@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string>
+#include <cstring>
+
+class Concatenate {
+public:
+    std::string concat(const std::string& s1, const std::string& s2) {
+        return s1 + s2;
+    }
+
+    char* concat(const char* s1, const char* s2) {
+        char* result = new char[std::strlen(s1) + std::strlen(s2) + 1];
+        std::strcpy(result, s1);
+        std::strcat(result, s2);
+        return result;
+    }
+};
+
+int main() {
+    Concatenate obj;
+    std::cout << "Concatenate strings: " << obj.concat("Hello, ", "World!") << std::endl;
+
+    char* result = obj.concat("Good ", "Morning");
+    std::cout << "Concatenate char arrays: " << result << std::endl;
+    delete[] result;
+    return 0;
+}
