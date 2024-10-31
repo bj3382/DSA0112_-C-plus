@@ -1,0 +1,20 @@
+#include <iostream>
+#include <cmath>
+
+class Absolute {
+public:
+    int abs(int n) {
+        return std::abs(n);
+    }
+
+    double abs(double n) {
+        return std::fabs(n);
+    }
+};
+
+int main() {
+    Absolute obj;
+    std::cout << "|-5| = " << obj.abs(-5) << std::endl;
+    std::cout << "|-3.14| = " << obj.abs(-3.14) << std::endl;
+    return 0;
+}
