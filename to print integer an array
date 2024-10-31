@@ -1,0 +1,35 @@
+#include <iostream>
+
+class Printer {
+public:
+    void print(int arr[], int n) {
+        for (int i = 0; i < n; i++)
+            std::cout << arr[i] << " ";
+        std::cout << std::endl;
+    }
+
+    void print(double arr[], int n) {
+        for (int i = 0; i < n; i++)
+            std::cout << arr[i] << " ";
+        std::cout << std::endl;
+    }
+
+    void print(char arr[], int n) {
+        for (int i = 0; i < n; i++)
+            std::cout << arr[i] << " ";
+        std::cout << std::endl;
+    }
+};
+
+int main() {
+    Printer obj;
+    int intArr[] = {1, 2, 3};
+    double doubleArr[] = {1.1, 2.2, 3.3};
+    char charArr[] = {'a', 'b', 'c'};
+
+    obj.print(intArr, 3);
+    obj.print(doubleArr, 3);
+    obj.print(charArr, 3);
+
+    return 0;
+}
