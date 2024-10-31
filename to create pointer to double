@@ -1,0 +1,10 @@
+#include <iostream>
+
+int main() {
+    double value = 10.99;      // Declare a double variable
+    double* ptr = &value;      // Create a pointer to the double variable
+
+    // Display the value using the pointer
+    std::cout << "Value of double: " << *ptr << std::endl;
+    return 0;
+}
